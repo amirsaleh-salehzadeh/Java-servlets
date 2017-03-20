@@ -1,0 +1,79 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Apr 04, 2010 at 09:10 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `2010fifa`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `booking`
+-- 
+
+CREATE TABLE `booking` (
+  `usern` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `matchID` int(11) NOT NULL default '0',
+  `totalprice` int(11) NOT NULL default '0',
+  `qty` int(11) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `booking`
+-- 
+
+INSERT INTO `booking` VALUES ('user', 1, 6600, 44);
+INSERT INTO `booking` VALUES ('user', 1, 8250, 55);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `matches`
+-- 
+
+CREATE TABLE `matches` (
+  `matchID` int(11) NOT NULL auto_increment,
+  `guest` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `host` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `time` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `date` date NOT NULL default '0000-00-00',
+  `stadium` varchar(20) collate latin1_general_ci NOT NULL default '',
+  PRIMARY KEY  (`matchID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=5 ;
+
+-- 
+-- Dumping data for table `matches`
+-- 
+
+INSERT INTO `matches` VALUES (1, 'germany', 'brazil', '14:00', '2010-04-02', 'stadium 1');
+INSERT INTO `matches` VALUES (4, 'france', 'spain', '18:00', '2010-04-08', 'stadium 2');
+INSERT INTO `matches` VALUES (3, 'spain', 'germany', '16:00', '2010-04-05', 'stadium 2');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `user`
+-- 
+
+CREATE TABLE `user` (
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `fname` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `email` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `usern` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `pass` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `confirm` binary(1) NOT NULL default '',
+  UNIQUE KEY `usern` (`usern`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES ('user', 'user', 'user', 'user', 'user', 0x31);
+INSERT INTO `user` VALUES ('ali', 'rezvani', 'email', 'admin', 'admin', 0x30);
+        

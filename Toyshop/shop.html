@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Toy Shop</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<LINK href="style.css" rel=stylesheet>
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function validator(field,alerttxt)
+{
+with (field)
+{
+if (value==null||value=="")
+  {alert(alerttxt);return false}
+else {return true}
+}
+}
+
+function validate_form(thisform)
+{
+with (thisform)
+{
+if (validator(name,"Name did not filled out!")==false)
+  {name.focus();return false}
+if (validator(familyname,"Family name did not filled out!")==false)
+  {familyname.focus();return false}
+if (validator(acn,"Account number must did not filled out!")==false)
+  {acn.focus();return false}
+if (validator(mail,"Enter a correct e-mail address!")==false)
+  {mail.focus();return false}
+if (validator(address,"Address did not filled out!")==false)
+  {address.focus();return false} 
+if (validator(phn,"Phone number did not filled out!")==false)
+  {phn.focus();return false} 
+}}
+//-->
+</script>
+</head>
+<body bgcolor="#0094be" onLoad="MM_preloadImages('images/shop2_02.gif','images/shop2_03.gif','images/shop2_04.gif','images/shop2_05.gif')">
+<form onSubmit="return validate_form(this)" action="shop.php" method="post">
+<!-- ImageReady Slices (Untitled-1.psd) -->
+<br>
+<table id="Table_01" width="810"  border="0" cellpadding="0" cellspacing="0" align="center">
+<tr>
+		<td height="200" colspan="4"><img src="images/shop_01.gif" width="800" height="200" alt=""></td>
+  </tr>
+	<tr>
+		<td height="51"><a href="About us.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','images/shop2_02.gif',1)">
+        <img src="images/shop_02.gif" name="Image6" width="234" height="51" border="0" alt=""></a><a href="game.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','images/shop2_03.gif',1)">
+        <img src="images/shop_03.gif" name="Image7" width="175" height="51" border="0" alt=""></a><a href="shop.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image8','','images/shop2_04.gif',1)"><img src="images/shop_04.gif" name="Image8" width="172" height="51" border="0" alt=""></a><a href="contact.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','images/shop2_05.gif',1)"><img src="images/shop_05.gif" name="Image9" width="219" height="51" border="0" alt=""></a></td>
+</tr>
+<tr><td>
+
+	<table width="625" border="0" align="center">
+  <tr>
+    <td width="150"><img src="images/Toy_CarS.jpg" alt="1" width="150" height="150"></td>
+	<td width="149"><h1><a href="4wd.html">4WD-Car</a></h1>
+	  <h2>Price: 3 $</h2>
+
+	    <label> Add to basket 
+	      <input type="checkbox" name="CheckPoint1" value="checkbox">
+        </label>	</td>       
+	<td width="156"><img src="images/7261_S.jpg" width="150" height="150" alt="">  </td>
+	<td width="152"><h1>&nbsp;</h1>
+	  <h1><a href="lego train.html">Lego Train</a></h1>
+	  <h2>Price = 5 $</h2>
+
+        
+          <label>Add to basket
+            <input type="checkbox" name="CheckPoint2" value="checkbox">
+          </label>
+      
+	   
+	</td>
+  <tr>
+    <td height="142"><img src="images/first-dream-houseS.jpg" alt="4" width="150" height="138"></td>
+	<td><h1><a href="barbie.html">Barbie House</a></h1>
+	  <h2>Price = 12 $</h2>
+
+	    <label>Add to basket
+	      <input type="checkbox" name="CheckPoint3" value="checkbox">
+        </label>
+
+	  </td>
+	<td><img src="images/8114_S.jpg" alt="3" width="150" height="152">    
+	<td><h1><a href="star trek.html">Star Trek</a></h1>	  
+	  <h2> Price:13 $</h2>
+	  
+	    <label>Add to basket
+	      <input type="checkbox" name="CheckPoint4" value="checkbox">
+        </label></td>	    	</tr>
+  <tr>
+    <td height="245" colspan="4"><h1>Fill the form to complete your request</h1>
+          <table width="342" border="0">
+    <tr>
+      <td width="111">Name: </td>
+      <td width="215"><input type="text" name="name"></td>
+    </tr>
+    <tr>
+      <td>Family Name:</td>
+      <td><input type="text" name="familyname"></td>
+    </tr>
+    <tr>
+      <td>Account Number: </td>
+      <td><input type="text" name="acn"></td>
+    </tr>
+    <tr>
+      <td>Email: </td>
+      <td><input type="text" name="mail" ></td>
+    </tr>
+    <tr>
+      <td>Address: </td>
+      <td><textarea rows="3" cols="20" name="address"></textarea></td>
+    </tr>
+    <tr>
+      <td>Phone number: </td>
+      <td><input type="text" name="phn"></td>
+    </tr>
+  </table>
+       <label><strong>Add to basket</strong>
+      <input type="submit" name="one" id="one" value="Submit">
+</label>      </td>
+	</tr>
+</table></td></tr></table>
+      
+
+</form>
+<p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-html401"
+        alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
+  </p>
+
+<!-- End ImageReady Slices -->
+</body>
+</html>

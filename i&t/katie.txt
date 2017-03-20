@@ -1,0 +1,74 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Oct 22, 2009 at 12:12 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `piano`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `finalizedorder`
+-- 
+
+CREATE TABLE `finalizedorder` (
+  `userName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `totalPrice` int(20) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `finalizedorder`
+-- 
+
+INSERT INTO `finalizedorder` VALUES ('admin', 2690);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `piano`
+-- 
+
+CREATE TABLE `piano` (
+  `companyName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `productName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `weight` int(8) NOT NULL default '0',
+  `price` int(8) NOT NULL default '0',
+  `image` varchar(20) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `piano`
+-- 
+
+INSERT INTO `piano` VALUES ('dsfg', 'asdf', 324, 2345, '1');
+INSERT INTO `piano` VALUES ('sdfgs', 'sgdhsg', 45636, 3546, '2');
+INSERT INTO `piano` VALUES ('sdfgsdfg', 'erytwet', 235, 345, '3');
+INSERT INTO `piano` VALUES ('sdfhgsdf', 'bxvcb', 3457, 3657, '4');
+INSERT INTO `piano` VALUES ('vbjkmvbm', 'vbnmvbm', 2345, 567, '5');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `user`
+-- 
+
+CREATE TABLE `user` (
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `familyName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `userName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `access` binary(1) NOT NULL default '',
+  `password` varchar(20) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES ('sdfgsdfgsfdg', 'sdfgsdfgsdfg', 'sdfgsdfgsdfg', 0x30, 'g sdfgsdfgs');
+INSERT INTO `user` VALUES ('amirsaleh', 'salehzadeh', 'admin', 0x31, 'ams');
+        

@@ -1,0 +1,76 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Oct 22, 2009 at 12:11 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `amirdvdstore`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `confirmedorder`
+-- 
+
+CREATE TABLE `confirmedorder` (
+  `userName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `price` double NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `confirmedorder`
+-- 
+
+INSERT INTO `confirmedorder` VALUES ('ams', 59.98);
+INSERT INTO `confirmedorder` VALUES ('ams', 59.98);
+INSERT INTO `confirmedorder` VALUES ('ams', 59.98);
+INSERT INTO `confirmedorder` VALUES ('ams', 59.98);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `dvd`
+-- 
+
+CREATE TABLE `dvd` (
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `description` text collate latin1_general_ci NOT NULL,
+  `imageAddress` varchar(20) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `dvd`
+-- 
+
+INSERT INTO `dvd` VALUES ('Major Movie Star', 'cghjdf jcfgj dfgjfbncvbjcf cfgh xfghsdvbzlkdng sfd/bnxc f;hlds./;dfkjg ws;fdblkxjfgh [wpoegj xcl;h jrts s;dlghj wsre;h lgnfg s;dlfkgn ', '04');
+INSERT INTO `dvd` VALUES ('Dumb and Dumber', 'cnc vbndxhdxthsxfd szdfg afdsa dsf adsf adsf sdvzxcvaszdvzxcvz sdg zadsgv zsdfg adsg zsdg zsdgzsdgzsdg asdgddddddddddddddddddddd d dds fdsfsdf sdfsdf', '01');
+INSERT INTO `dvd` VALUES ('21', 'sdfh dsfh sdfh xdghj cbhmc vbncgyi kvnmfghkfghkfdthkrtiy kfghjkf gyi fdhtjcghj chgj chgbj chkfghmvbmnv bn,vbn,mvbnv buv gh mncgu0gy7imvbnmfcnmdgbj dftu dfgj d', '05');
+INSERT INTO `dvd` VALUES ('Hangover', 'sdf;glksadfg z/xbzfg;oajesrg ;ldznbsd;gnsb ;./kdjg sv.xnb ;xzdfkghsaepr 0t9u3q gzdpkfb s;droigtuq324 0t[9jear zd''fmsdfg'' s;ldfjg s;fdlg fdsg ws;ldfgsdfg ;ladkfng ', '07');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `user`
+-- 
+
+CREATE TABLE `user` (
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `fName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `telephone` bigint(20) NOT NULL default '0',
+  `userName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `passWord` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `address` text collate latin1_general_ci NOT NULL,
+  `adminAccess` binary(1) NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES ('dfghdgh', 'dfghdfgh', 0, 'ams', 'ams', 'dfhdfghdh', 0x30);
+INSERT INTO `user` VALUES ('admin', 'admin', 0, 'admin', 'admin', 'admin', 0x31);
+        

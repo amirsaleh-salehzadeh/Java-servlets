@@ -1,0 +1,28 @@
+SMAP
+loginsucceed_jsp.java
+JSP
+*S JSP
+*F
++ 0 loginsucceed.jsp
+loginsucceed.jsp
++ 1 header.jsp
+header.jsp
++ 2 menu.jsp
+menu.jsp
++ 3 banner.jsp
+banner.jsp
++ 4 footer.jsp
+footer.jsp
+*L
+5,17:54
+5#1,16:71
+21#0,5:86
+5#2,26:91
+25#0,7:116
+32,3:124
+34,6:127
+5#3,16:133
+39#0,5:148
+5#4,16:153
+43#0,9:168
+*E

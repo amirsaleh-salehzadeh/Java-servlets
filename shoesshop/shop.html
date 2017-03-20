@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shoes shop</title>
+</head>
+<script>
+function validator(field,alerttxt)
+{
+with (field)
+{
+if (value==null||value=="")
+  {alert(alerttxt);return false}
+else {return true}
+}
+}
+
+function validate_form(thisform)
+{
+with (thisform)
+{
+if (validator(name,"Name field did not fill!")==false)
+  {name.focus();return false}
+if (validator(familyname,"Family name field did not fill!")==false)
+  {familyname.focus();return false}
+if (validator(address,"Postal address number field did not fill!")==false)
+  {address.focus();return false}
+if (validator(email,"Email address field did not fill!")==false)
+  {email.focus();return false}
+if (validator(phone,"Phone number field did not fill!")==false)
+  {phone.focus();return false} 
+
+}}
+</script>
+<body bgcolor="#9999CC">
+<table width="800" height="197" border="0" align="CENTER">
+  <tr>
+    <td colspan="2"><h1>SHOES SHOP</h1>
+   <h3><p>please select your product, fill the form and click sumbit to complete your request</p></h3></td>
+  </tr>
+  <form action="submit.php" method="post" onSubmit="return validate_form(this)"><tr>
+    <td height="102"><img src="Men_s_Sport_ShoeS.jpg" width="100" height="100" alt="01" /></td>
+    <td width="690"><p>Shoes number one</p>
+      <p>price: 60$</p>
+      <p>how many you want? 
+      <label>
+      <select name="011" id="011">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      </label>
+    </p></td>
+  </tr>
+  <tr>
+    <td><img src="Sports_Shoes1S.jpg" width="100" height="100" alt="03" /></td>
+    <td><p>Shoes number two</p>
+      <p>price: 70$</p>
+      <p>how many you want? 
+        <select name="012" id="012">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </p></td>
+  </tr>
+  <tr>
+    <td><img src="Sports_ShoesS.jpg" width="100" height="100" alt="02" /></td>
+    <td><p>Shoes number three</p>
+      <p>price: 100$</p>
+      <p>how many you want?
+        <select name="013" id="013">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </p></td>
+  </tr>
+  <tr>
+   <td colspan="2">
+   <table width="795" border="1">
+  <tr>
+    <td width="188">Name</td>
+    <td width="590"><label>
+      <input type="text" name="name" id="name" />
+    </label></td>
+  </tr>
+  <tr>
+    <td>Family Name</td>
+    <td><label>
+      <input type="text" name="familyname" id="familyname" />
+    </label></td>
+  </tr>
+  <tr>
+    <td>Postal Address</td>
+    <td><label>
+      <textarea name="address" id="address" cols="45" rows="5"></textarea>
+    </label></td>
+  </tr>
+  <tr>
+    <td>Email Address</td>
+    <td><label>
+      <input type="text" name="email" id="email" />
+    </label></td>
+  </tr>
+  <tr>
+    <td>Phone Number</td>
+    <td><label>
+      <input type="text" name="phone" id="phone" />
+    </label></td>
+  </tr>
+  <tr>
+    <td>Paid By</td>
+    <td><label>
+      <select name="paid" id="paid">
+        <option>Credit Card</option>
+        <option>Visa Card</option>
+        <option>By cash on delivery</option>
+      </select>
+    </label></td>
+  </tr>
+</table>
+
+   <p>
+     <label>Purchase
+     <input type="submit" name="01" id="014" value="Submit" />
+     </label>
+   </p></td></tr>
+  </form>
+</table>
+</body>
+</html>

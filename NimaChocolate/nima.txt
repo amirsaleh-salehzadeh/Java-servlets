@@ -1,0 +1,97 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Oct 22, 2009 at 12:12 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `nimachocolate`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `brands`
+-- 
+
+CREATE TABLE `brands` (
+  `brandName` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `brandDescription` text collate latin1_general_ci NOT NULL,
+  `brandImageAddress` varchar(30) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `brands`
+-- 
+
+INSERT INTO `brands` VALUES ('Ferrero', 'This remarkable story began in 1946, in Italy, where, after the war, candy and confections were in short supply and were purchased mainly for special occasions from the local sweet shop. It was here in northwestern Italy in the small town of Alba, that master confectioner Pietro Ferrero developed a system that enabled him to mass-produce true quality confections and offer them to consumers at reasonable prices.', 'ferrero_small_logo.gif');
+INSERT INTO `brands` VALUES ('Milka', 'The best-selling brand of milk chocolate. It is sold in bar form, in holiday shapes, and in a variety of specialty forms. It was created in 1901 in Austria, by Swiss chocolatier Philippe Suchard as his first milk chocolate variety.\r\n', 'milka.jpg');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `chocolate`
+-- 
+
+CREATE TABLE `chocolate` (
+  `chocolateName` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `chocolateDetail` text collate latin1_general_ci NOT NULL,
+  `imageAddress` varchar(60) collate latin1_general_ci NOT NULL default '',
+  `price` int(8) NOT NULL default '0',
+  `brandName` varchar(15) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `chocolate`
+-- 
+
+INSERT INTO `chocolate` VALUES ('chocolate3', 'asdg;kans a;lfkansdf a;odsfn jj', 'productsurprize.jpg', 265, 'Ferrero');
+INSERT INTO `chocolate` VALUES ('product02', 'sdfhg shxcvbcxfth cfthcftu df', 'product.jpg', 567, 'Ferrero');
+INSERT INTO `chocolate` VALUES ('product1', 'description aboit this product', 'product01.jpg', 23, 'Ferrero');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `purchaseconfirm`
+-- 
+
+CREATE TABLE `purchaseconfirm` (
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `fname` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `product` varchar(20) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `purchaseconfirm`
+-- 
+
+INSERT INTO `purchaseconfirm` VALUES ('admin', 'admin', '\r\nproduct02\r\n');
+INSERT INTO `purchaseconfirm` VALUES ('amirsaleh', 'salehzadeh', '\r\nproduct1\r\n');
+INSERT INTO `purchaseconfirm` VALUES ('amirsaleh', 'salehzadeh', '\r\nchocolate3\r\n');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `user`
+-- 
+
+CREATE TABLE `user` (
+  `name` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `familyName` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `address` varchar(160) collate latin1_general_ci NOT NULL default '',
+  `email` varchar(30) collate latin1_general_ci NOT NULL default '',
+  `userName` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `password` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `security` varchar(6) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES ('admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin');
+INSERT INTO `user` VALUES ('amirsaleh', 'salehzadeh', 'ams\r\n\r\n', 'amirsa_salehadeh@yahoo.com', 'ams', 'ams', 'user');
+INSERT INTO `user` VALUES ('43215', 'asefasdfa', 'asdfa fasdfasdfaf', '1234134', 'asdfasdf', 'asdf', '0');
+        

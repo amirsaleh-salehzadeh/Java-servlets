@@ -1,0 +1,56 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Oct 29, 2009 at 12:27 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `db1`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `roles`
+-- 
+
+CREATE TABLE `roles` (
+  `role` varchar(20) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `roles`
+-- 
+
+INSERT INTO `roles` VALUES ('role1');
+INSERT INTO `roles` VALUES ('role2');
+INSERT INTO `roles` VALUES ('superAdmin');
+INSERT INTO `roles` VALUES ('user');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `users`
+-- 
+
+CREATE TABLE `users` (
+  `Username` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `Password` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `Name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `Family` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `Address` text collate latin1_general_ci NOT NULL,
+  `email` varchar(50) collate latin1_general_ci NOT NULL default '',
+  `phone` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `role` varchar(20) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `users`
+-- 
+
+INSERT INTO `users` VALUES ('2', '2', '1', '2', '2', '2', '2', 'role2');
+INSERT INTO `users` VALUES ('3', '3', '3', '3', '3', '3', '3', 'user');
+INSERT INTO `users` VALUES ('ams', 'ams', 'amirsaleh', 'salehzadeh', 'sdfxzcvbz svbzfds gfdg azdsg ', 'amirsa_salehzadeh@yahoo.com', '123123', 'superAdmin');
+        

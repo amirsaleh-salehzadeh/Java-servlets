@@ -1,0 +1,111 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Apr 03, 2010 at 09:43 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `auctiondb`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `auction`
+-- 
+
+CREATE TABLE `auction` (
+  `auction_id` int(50) NOT NULL auto_increment,
+  `seller_id` int(50) NOT NULL default '0',
+  `basePrice` varchar(50) NOT NULL default '',
+  `startDate` varchar(50) NOT NULL default '',
+  `endDate` varchar(50) NOT NULL default '',
+  `isActive` int(1) NOT NULL default '0',
+  `title` varchar(50) NOT NULL default '',
+  `descp` varchar(50) NOT NULL default '',
+  `img` varchar(50) NOT NULL default '',
+  `category_id` int(50) NOT NULL default '0',
+  PRIMARY KEY  (`auction_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+-- 
+-- Dumping data for table `auction`
+-- 
+
+INSERT INTO `auction` VALUES (1, 0, '98000.0', '2010/10/09', '2010/10/10', 0, 'Sony 24 Inch', 'Sony 24 Inch - Good - Quality Checked', '', 2);
+INSERT INTO `auction` VALUES (2, 0, '10000.0', '2010/10/09', '2010/10/15', 0, 'laptop', 'high quality', '', 1);
+INSERT INTO `auction` VALUES (3, 0, '1000.0', '2010/10/09', '2010/10/15', 0, 'lcd', 'good', '', 2);
+INSERT INTO `auction` VALUES (4, 0, '300.0', '2010/10/09', '2010/10/26', 0, 'xbox', 'amazing', '', 1);
+INSERT INTO `auction` VALUES (5, 0, '200.0', '2010/10/09', '2010/12/3', 0, 'car', 'high speed', '', 3);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `bid`
+-- 
+
+CREATE TABLE `bid` (
+  `bid_id` int(50) NOT NULL auto_increment,
+  `user_id` int(50) NOT NULL default '0',
+  `auction_id` int(50) NOT NULL default '0',
+  `price` varchar(50) NOT NULL default '',
+  `register_date` varchar(50) NOT NULL default '',
+  PRIMARY KEY  (`bid_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `bid`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `category`
+-- 
+
+CREATE TABLE `category` (
+  `category_id` int(50) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL default '',
+  `descp` varchar(50) NOT NULL default '',
+  PRIMARY KEY  (`category_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+-- 
+-- Dumping data for table `category`
+-- 
+
+INSERT INTO `category` VALUES (1, 'Computers', 'All Computers');
+INSERT INTO `category` VALUES (2, 'TV', 'All TV');
+INSERT INTO `category` VALUES (3, 'Toys', 'All Toys');
+INSERT INTO `category` VALUES (4, 'electronics', 'all electronics');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `users`
+-- 
+
+CREATE TABLE `users` (
+  `user_id` int(50) NOT NULL auto_increment,
+  `fname` varchar(50) NOT NULL default '',
+  `lname` varchar(50) NOT NULL default '',
+  `username` varchar(50) NOT NULL default '',
+  `password` varchar(50) NOT NULL default '',
+  `tell_no` varchar(50) NOT NULL default '',
+  `address` varchar(50) NOT NULL default '',
+  `isActive` int(1) NOT NULL default '0',
+  PRIMARY KEY  (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+-- 
+-- Dumping data for table `users`
+-- 
+
+INSERT INTO `users` VALUES (1, 'anna', 'alikhani', 'anna', 'anna', '12345', 'tehran', 1);
+INSERT INTO `users` VALUES (3, 'Shirin', 'Ali', 'shirin', 'shirin', '87654', 'esfahan', 2);
+INSERT INTO `users` VALUES (4, 'ali', 'alian', 'ali', 'ali', '1234', 'tehram', 1);
+INSERT INTO `users` VALUES (5, 'faria', 'fari', 'fafar', '1234', '123456', 'teh', 0);
+        

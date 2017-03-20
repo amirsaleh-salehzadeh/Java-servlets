@@ -1,0 +1,77 @@
+ 
+
+
+CREATE TABLE IF NOT EXISTS `auction` (
+  `auction_id` int(50) NOT NULL auto_increment,
+  `seller_id` int(50) NOT NULL,
+  `basePrice` varchar(50) NOT NULL,
+  `startDate` varchar(50) NOT NULL,
+  `endDate` varchar(50) NOT NULL,
+  `isActive` int(1) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `descp` varchar(50) NOT NULL,
+  `img` varchar(50) NOT NULL,
+  `category_id` int(50) NOT NULL,
+  PRIMARY KEY  (`auction_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+
+INSERT INTO `auction` (`auction_id`, `seller_id`, `basePrice`, `startDate`, `endDate`, `isActive`, `title`, `descp`, `img`, `category_id`) VALUES
+(1, 0, '98000.0', '2010/10/09', '2010/10/10', 0, 'Sony 24 Inch', 'Sony 24 Inch - Good - Quality Checked', '', 2),
+(2, 0, '10000.0', '2010/10/09', '2010/10/15', 0, 'laptop', 'high quality', '', 1),
+(3, 0, '1000.0', '2010/10/09', '2010/10/15', 0, 'lcd', 'good', '', 2),
+(4, 0, '300.0', '2010/10/09', '2010/10/26', 0, 'xbox', 'amazing', '', 1),
+(5, 0, '200.0', '2010/10/09', '2010/12/3', 0, 'car', 'high speed', '', 3);
+
+
+
+CREATE TABLE IF NOT EXISTS `bid` (
+  `bid_id` int(50) NOT NULL auto_increment,
+  `user_id` int(50) NOT NULL,
+  `auction_id` int(50) NOT NULL,
+  `price` varchar(50) NOT NULL,
+  `register_date` varchar(50) NOT NULL,
+  PRIMARY KEY  (`bid_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `category_id` int(50) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL,
+  `descp` varchar(50) NOT NULL,
+  PRIMARY KEY  (`category_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+
+
+INSERT INTO `category` (`category_id`, `name`, `descp`) VALUES
+(1, 'Computers', 'All Computers'),
+(2, 'TV', 'All TV'),
+(3, 'Toys', 'All Toys'),
+(4, 'electronics', 'all electronics');
+
+
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(50) NOT NULL auto_increment,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `tell_no` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `isActive` int(1) NOT NULL default '0',
+  PRIMARY KEY  (`user_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+
+
+INSERT INTO `users` (`user_id`, `fname`, `lname`, `username`, `password`, `tell_no`, `address`, `isActive`) VALUES
+(1, 'anna', 'alikhani', 'anna', 'anna', '12345', 'tehran', 1),
+(3, 'Shirin', 'Ali', 'shirin', 'shirin', '87654', 'esfahan', 2),
+(4, 'ali', 'alian', 'ali', 'ali', '1234', 'tehram', 1),
+(5, 'faria', 'fari', 'fafar', '1234', '123456', 'teh', 0);
+ 

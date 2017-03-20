@@ -1,0 +1,16 @@
+SMAP
+auctionlist_jsp.java
+JSP
+*S JSP
+*F
++ 0 auctionlist.jsp
+auctionlist.jsp
+*L
+1,67:47
+68,4:115
+71,2:119
+73,4:121,3
+77,2:133
+79,2:136
+80,11:138
+*E

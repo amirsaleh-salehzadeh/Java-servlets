@@ -1,0 +1,112 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Apr 03, 2010 at 09:42 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `cinema`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `booking`
+-- 
+
+CREATE TABLE `booking` (
+  `book_id` int(11) NOT NULL auto_increment,
+  `customer_id` int(11) NOT NULL default '0',
+  `movie_id` int(11) NOT NULL default '0',
+  `time` varchar(50) default NULL,
+  `date` date default NULL,
+  `qty` int(11) default NULL,
+  `total_price` int(11) default NULL,
+  PRIMARY KEY  (`book_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- 
+-- Dumping data for table `booking`
+-- 
+
+INSERT INTO `booking` VALUES (1, 13, 2, '10-12', '2010-04-02', 5, 115);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `category`
+-- 
+
+CREATE TABLE `category` (
+  `genre_id` int(11) NOT NULL auto_increment,
+  `genre` varchar(50) NOT NULL default '',
+  PRIMARY KEY  (`genre_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- 
+-- Dumping data for table `category`
+-- 
+
+INSERT INTO `category` VALUES (1, 'Action');
+INSERT INTO `category` VALUES (2, 'Romantic Comedy');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `customer`
+-- 
+
+CREATE TABLE `customer` (
+  `customer_id` int(11) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL default '',
+  `last_name` varchar(50) NOT NULL default '',
+  `tell` varchar(100) NOT NULL default '',
+  `email` varchar(100) NOT NULL default '',
+  `username` varchar(50) NOT NULL default '',
+  `password` varchar(50) NOT NULL default '',
+  `isActive` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`customer_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+
+-- 
+-- Dumping data for table `customer`
+-- 
+
+INSERT INTO `customer` VALUES (2, 'jeiran', 'Khoylou', '887967', 'j@yahoo', 'jeirankh', '123', 0);
+INSERT INTO `customer` VALUES (13, 'ali', 'gholi', '8879777', 'ali@yahoo', 'aligh', '474', 1);
+INSERT INTO `customer` VALUES (18, 'klsdfsd', 'dsfsd', 'ds', 'sdf', 'faf', '50', 0);
+INSERT INTO `customer` VALUES (17, 'jj', 'kk', '67565', '76786', 'jiri', '333', 0);
+INSERT INTO `customer` VALUES (16, 'tat', 'kh', '2414', 't@hhkjh', 'tat', '17', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `movie`
+-- 
+
+CREATE TABLE `movie` (
+  `movie_id` int(11) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL default '',
+  `Director` varchar(50) NOT NULL default '',
+  `producer` varchar(50) NOT NULL default '',
+  `price` int(11) NOT NULL default '0',
+  `start_date` varchar(50) NOT NULL default '',
+  `genre_id` int(11) NOT NULL default '0',
+  `image` varchar(100) default NULL,
+  PRIMARY KEY  (`movie_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+-- 
+-- Dumping data for table `movie`
+-- 
+
+INSERT INTO `movie` VALUES (2, 'the hours', 'woodi Allen', 'gjhgj', 23, '2010-01-01', 1, '1.jpg');
+INSERT INTO `movie` VALUES (3, 'its Complicated', 'jkwdhwkh', 'dhkjwehd', 123, '2010-01-05', 2, 'dsjhgfkajsdg');
+INSERT INTO `movie` VALUES (4, 'hgjh', 'jhgjh', 'fdds', 14234, '2010-01-01', 2, 'gfjhfhjg');
+INSERT INTO `movie` VALUES (5, 'aaaaaaaaaa', 's', 's', 1, 'f', 1, NULL);
+INSERT INTO `movie` VALUES (6, 'aaaaaaaaaa', 's', 's', 0, 'f', 1, NULL);
+INSERT INTO `movie` VALUES (7, 'ssssssss', 'er', '', 4, '', 1, NULL);
+INSERT INTO `movie` VALUES (8, 'io', 'uouoi', 'u', 32, '', 1, NULL);
+        

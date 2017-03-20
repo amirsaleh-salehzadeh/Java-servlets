@@ -1,0 +1,1 @@
+ ORDERS: Total payment is: 0$ 

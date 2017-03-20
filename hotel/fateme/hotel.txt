@@ -1,0 +1,75 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Apr 03, 2010 at 09:41 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `hotel`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `reserve`
+-- 
+
+CREATE TABLE `reserve` (
+  `userName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `roomID` int(11) NOT NULL default '0',
+  `fromDate` date NOT NULL default '0000-00-00',
+  `toDate` date NOT NULL default '0000-00-00'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `reserve`
+-- 
+
+INSERT INTO `reserve` VALUES ('administrator', 1, '2010-04-01', '2010-04-01');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `room`
+-- 
+
+CREATE TABLE `room` (
+  `roomID` int(11) NOT NULL auto_increment,
+  `price` int(11) NOT NULL default '0',
+  `beds` int(11) NOT NULL default '0',
+  `available` int(11) NOT NULL default '0',
+  `image` varchar(20) collate latin1_general_ci NOT NULL default '',
+  PRIMARY KEY  (`roomID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=2 ;
+
+-- 
+-- Dumping data for table `room`
+-- 
+
+INSERT INTO `room` VALUES (1, 565, 4, 5, 'ttttttt');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `user`
+-- 
+
+CREATE TABLE `user` (
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `family` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `pass` varbinary(20) NOT NULL default '',
+  `authurized` binary(1) NOT NULL default '',
+  `email` varchar(80) collate latin1_general_ci NOT NULL default '',
+  `username` varchar(20) collate latin1_general_ci NOT NULL default '',
+  PRIMARY KEY  (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES ('admin', 'admin', 0x61646d696e, 0x31, 'admin', 'administrator');
+INSERT INTO `user` VALUES ('user', 'user', 0x75736572, 0x30, 'user', 'user');
+        

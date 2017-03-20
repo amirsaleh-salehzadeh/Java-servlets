@@ -1,0 +1,37 @@
+/* CSS Document */
+.rowId{
+font-size:15px;
+color:#45780b;
+font-weight:bold;
+}
+.price{
+color:#AB0110;
+font-weight:bold;
+font-size:18px;
+}
+.title{
+text-align:center;
+font-size:30px;
+color:#5d000b;
+font-weight:bold;
+}
+.border{
+background-image: url(Untitled-1_06.jpg);
+}
+.titleForm{
+font-size:22px;
+font-weight:bold;
+color:#786778
+}
+.dvdTitle{
+text-align:center;
+font-size:25px;
+color:#5d2c34;
+font-style:italic;
+font-weight:bold;
+}
+.error{
+color:#AB2212;
+font-weight:bold;
+font-size:18px;
+}

@@ -1,0 +1,235 @@
+
+
+
+
+
+***********AuctionNetServer
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package itauction.net;
+
+import itauction.bs.BSManager;
+import itauction.common.AuctionENT;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import sun.nio.ch.ServerSocketAdaptor;
+
+/**
+ *
+ * @author roji
+ */
+public class AuctionNetServer {
+
+    public AuctionNetServer(){
+        
+    }
+    public void runServer(){
+        try{
+            //1
+            ServerSocket ss=new ServerSocket(1000);
+            //2
+            Socket s= ss.accept();
+            //3
+            String welcome="Welcome to auction site.";
+            s.getOutputStream().write(welcome.getBytes());
+            s.getOutputStream().write("enter command:".getBytes());
+            //4
+            InputStreamReader bin= new InputStreamReader(s.getInputStream());
+            BufferedReader br= new BufferedReader(bin);
+            String usercommand= br.readLine();
+            //5
+            String text="usercommand="+usercommand+"\r\n";
+            s.getOutputStream().write(text.getBytes());
+            if (usercommand.startsWith("SEARCH")){
+                String ar[]=usercommand.split(" ");
+                String searchtext=ar[1];
+                BSManager bs=new BSManager();
+                ArrayList<AuctionENT> arAuction= bs.search(searchtext);
+                s.getOutputStream().write("AuctionID \t CatID \t SellerID \t Startdate \t Enddate \t Title".getBytes());
+                for(int i=0;i<arAuction.size();i++){
+                    String auctionStr="\r\n"+arAuction.get(i).getAuction_id()
+                            +"\t"+arAuction.get(i).getCategory_id()
+                            +"\t"+arAuction.get(i).getSeller_id()
+                            +"\t"+arAuction.get(i).getDesc()
+                            +"\t"+arAuction.get(i).getTitle()
+                            +"\r\n";
+                    s.getOutputStream().write(auctionStr.getBytes());
+                
+                }
+                
+            }
+            ss.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+}
+********************AuctionNetServer1
+
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package itauction.net;
+
+import itauction.bs.BSManager;
+import itauction.common.AuctionENT;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import sun.nio.ch.ServerSocketAdaptor;
+
+/**
+ *
+ * @author roji
+ */
+public class AuctionNetServer1 {
+
+    public AuctionNetServer1(){
+        
+    }
+    public void runServer(){
+        try{
+            //1
+            ServerSocket ss=new ServerSocket(1000);
+            while(true){
+                try{
+            //2
+            Socket customer= ss.accept();
+             AuctionNetThread seller= new AuctionNetThread();
+             seller.setCustomer(customer);
+             seller.start();
+            //3
+           
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+                
+                
+            }
+            
+           // ss.close();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+}
+
+
+******************AuctionNetThread
+
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package itauction.net;
+
+import itauction.bs.BSManager;
+import itauction.common.AuctionENT;
+import itauction.common.UserENT;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author roji
+ */
+public class AuctionNetThread extends Thread{
+     
+    private Socket customer=null;
+    UserENT UserENT=null;
+    
+    @Override
+    public void run() {
+        try{
+            String welcome="Welcome to auction site.";
+            customer.getOutputStream().write(welcome.getBytes());
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+        
+        
+        while(true){
+             
+        
+        try{
+        
+            customer.getOutputStream().write("enter command:".getBytes());
+            //4
+            InputStreamReader bin= new InputStreamReader(customer.getInputStream());
+            BufferedReader br= new BufferedReader(bin);
+            String usercommand= br.readLine();
+            //5
+            String text="usercommand="+usercommand+"\r\n";
+            customer.getOutputStream().write(text.getBytes());
+            if (usercommand.startsWith("SEARCH")){
+                String ar[]=usercommand.split(" ");
+                String searchtext=ar[1];
+                BSManager bs=new BSManager();
+                ArrayList<AuctionENT> arAuction= bs.search(searchtext);
+                customer.getOutputStream().write("AuctionID \t CatID \t SellerID \t Startdate \t Enddate \t Title".getBytes());
+                for(int i=0;i<arAuction.size();i++){
+                    String auctionStr="\r\n"+arAuction.get(i).getAuction_id()
+                            +"\t"+arAuction.get(i).getCategory_id()
+                            +"\t"+arAuction.get(i).getSeller_id()
+                            +"\t"+arAuction.get(i).getDesc()
+                            +"\t"+arAuction.get(i).getTitle()
+                            +"\r\n";
+                    customer.getOutputStream().write(auctionStr.getBytes());
+                
+                }
+             
+           }else if(usercommand.startsWith("LOGIN")){
+               String[] ar=usercommand.split("");
+               String usrername=ar[1];
+               String password= ar[1];
+               BSManager bs= new BSManager();
+               UserENT =bs.login(usrername, password);
+               if(UserENT!=null){
+                   String weluser="welcome"+UserENT.getName()+"\r\n";
+                   customer.getOutputStream().write(weluser.getBytes());
+               }
+               else{
+                   customer.getOutputStream().write("Incorrect user or password".getBytes());
+               }
+            }else if(usercommand.startsWith("BYE")){
+                customer.close();
+                return;
+            }
+                    
+    }catch(Exception ex){
+        ex.printStackTrace();
+    }
+
+    }
+    }
+        Socket getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Socket customer) {
+        this.customer = customer;
+    }
+    
+    
+    
+
+}

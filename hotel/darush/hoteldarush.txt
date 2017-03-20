@@ -1,0 +1,77 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Apr 03, 2010 at 09:39 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `hoteldarush`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `book`
+-- 
+
+CREATE TABLE `book` (
+  `userID` int(11) NOT NULL default '0',
+  `roomID` int(11) NOT NULL default '0',
+  `fromDate` date NOT NULL default '0000-00-00',
+  `toDate` date NOT NULL default '0000-00-00'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `book`
+-- 
+
+INSERT INTO `book` VALUES (2, 1, '2010-04-01', '2010-05-01');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `room`
+-- 
+
+CREATE TABLE `room` (
+  `id` int(11) NOT NULL auto_increment,
+  `price` bigint(20) NOT NULL default '0',
+  `beds` int(11) NOT NULL default '0',
+  `available` int(11) NOT NULL default '0',
+  `image` varchar(20) collate latin1_general_ci NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=2 ;
+
+-- 
+-- Dumping data for table `room`
+-- 
+
+INSERT INTO `room` VALUES (1, 2000, 1, 5, 'image');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `user`
+-- 
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `fname` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `phone` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `pass` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `email` varchar(50) collate latin1_general_ci NOT NULL default '',
+  `usern` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `confirmed` binary(1) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=3 ;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES (1, 'na', 'fn', 'tel', 'pas', 'ema', 'un', 0x31);
+INSERT INTO `user` VALUES (2, 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 0x31);
+        

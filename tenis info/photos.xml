@@ -1,0 +1,81 @@
+<gallery
+base = ""
+background = "#FFFFFF"
+banner = "#F0F0F0"
+text = "#000000"
+link = "#0000FF"
+alink = "#FF0000"
+vlink = "#800080"
+date = "12/13/2007">
+	<sitename>Adobe Web Photo Gallery</sitename>
+	<photographer></photographer>
+	<contactinfo></contactinfo>
+	<email></email>
+	<security><![CDATA[]]> </security>
+
+<banner font = "Arial" fontsize = "3" color =  "#F0F0F0"> </banner>
+<thumbnail base ="thumbnails/" font = "Arial" fontsize = "4" color = "#F0F0F0" border = "0" rows = "3" col = "5"> </thumbnail> 
+<large base ="images/" font = "Arial" fontsize = "3" color = "#F0F0F0" border = "0"> </large>
+<images id = "images">
+
+<image
+path = "1225.jpg"
+width = "350"
+height = "249"
+thumbpath = "1225.jpg"
+thumbwidth = "75"
+thumbheight = "53">
+</image>
+
+
+<image
+path = "1230.jpg"
+width = "350"
+height = "270"
+thumbpath = "1230.jpg"
+thumbwidth = "75"
+thumbheight = "57">
+</image>
+
+
+<image
+path = "177.jpg"
+width = "350"
+height = "241"
+thumbpath = "177.jpg"
+thumbwidth = "75"
+thumbheight = "51">
+</image>
+
+
+<image
+path = "179.jpg"
+width = "244"
+height = "350"
+thumbpath = "179.jpg"
+thumbwidth = "52"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "657.jpg"
+width = "350"
+height = "266"
+thumbpath = "657.jpg"
+thumbwidth = "75"
+thumbheight = "57">
+</image>
+
+
+<image
+path = "659.jpg"
+width = "300"
+height = "350"
+thumbpath = "659.jpg"
+thumbwidth = "64"
+thumbheight = "75">
+</image>
+
+</images>
+</gallery>

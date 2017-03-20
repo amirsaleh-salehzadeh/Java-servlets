@@ -1,0 +1,54 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES latin1 */;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+CREATE DATABASE `carrental`
+    CHARACTER SET 'latin1'
+    COLLATE 'latin1_swedish_ci';
+
+USE `carrental`;
+
+CREATE TABLE `category` (
+  `categoryId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`categoryId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  `categoryId` int(11) NOT NULL DEFAULT '0',
+  `price` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+CREATE TABLE `renting` (
+  `userName` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `productId` int(11) NOT NULL DEFAULT '0',
+  `fromDate` date NOT NULL DEFAULT '0000-00-00',
+  `toDate` date NOT NULL DEFAULT '0000-00-00',
+  `rentId` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`rentId`),
+  UNIQUE KEY `rentId` (`rentId`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+CREATE TABLE `user` (
+  `name` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `familyName` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `address` text COLLATE latin1_general_ci NOT NULL,
+  `email` varchar(50) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `password` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `phone` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `username` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `confirmed` binary(1) NOT NULL DEFAULT '\0',
+  PRIMARY KEY (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

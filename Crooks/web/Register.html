@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Login</title>
+<style type="text/css">
+<!--
+.style3 {color: #999999}
+.style5 {font-size: 18px; font-weight: bold; color: #999999; }
+.style8 {
+	color: #FFFFFF;
+	font-size: 20px;
+}
+.style10 {font-family: "Times New Roman", Times, serif}
+
+-->
+</style></head>
+
+<body background="images/Background.jpg">
+<table width="1065"  bgcolor="#000000" border="1" align="center" cellspacing="0" cellpadding="0">
+<tr>
+    <td colspan="5" bgcolor="#000000"><div align="center"><img src="images/crooks_and_castles_logo.jpg" width="220" height="120" alt="01" /></div></td>
+</tr>
+<tr >
+    <td ><div align="center" class="style5"><a href="main.html">Home</a></div></td>
+	<td><div align="center" class="style5"><a href="Aboutus.html">About us</a></div></td>
+	<td><div align="center" class="style5"><a href="Contactus.html">Contact us</a></div></td>
+	<td><div align="center" class="style5"><a href="Login.html">Login</a></div></td>
+	
+</tr>
+
+<tr><td colspan="5">
+<br />
+<br />
+<br />
+<table  align="center" >
+    <form action="MyProjServlet" method="post">
+	<tr>
+	    <td colspan="5"><div align="center"><span class="style8 style10">Please fill the following form to confirm your registration, and wait to recieve the email by the administrator for your registration confirm.</span>
+                <input type="hidden" name="whatToDo" value="register">
+               </div><br /></td>
+    </tr>
+	<tr>
+	    <td>
+	      <div align="center">
+            <span class="style8"><span class="style10">Firstname:</span>&nbsp;</span>            </div></td>
+	    <td>
+	      <div align="left">
+	        <input type="text" name="Name" id="txtName" size="30" /> 
+          </div></td>
+	</tr>
+	<tr>
+	    <td><div align="center"><span class="style8"><span class="style10">Lastname:</span>&nbsp;</span></div></td>
+        <td>
+          <div align="left">
+            <input type="text" name="Family" id="txtFamily" size="30"/>	
+            </div></td>
+	</tr>
+	<tr>
+	    <td><div align="center"><span class="style8"><span class="style10">Email:</span>&nbsp;</span></div></td>
+        <td>
+          <div align="left">
+            <input type="text" name="email" size="30" />	
+            </div></td>
+	</tr>
+	<tr>
+	    <td><div align="center"><span class="style8"><span class="style10">Username:</span>&nbsp;</span></div></td>
+        <td>
+          <div align="left">
+            <input type="text" name="Username" size="30"/>	
+            </div></td>
+	</tr>
+	<tr>
+	    <td><div align="center"><span class="style8"><span class="style10">Password:</span>&nbsp;</span></div></td>
+        <td>
+          <div align="left">
+            <input type="password" name="Password" size="30" />
+            </div></td>
+	</tr>
+	<tr>
+	    <td><div align="center"><span class="style8"><span class="style10">Phonenumber</span>&nbsp;</span></div></td>
+        <td>
+          <div align="left">
+            <input type="text" name="phone_number" maxlength="12" />	
+            </div></td>
+	</tr>
+	<tr>
+	    <td><div align="center"><span class="style8"><span class="style10">Address</span>&nbsp;</span></div></td>
+        <td>
+          <div align="left">
+            <textarea name="Address" id="Address" cols="30" rows="6"></textarea>	
+            </div></td>
+	</tr>
+	<tr>
+	    <td><div align="center">
+	      <input type="submit" name="Submit" value="Submit" />
+	      </div></td>
+		<td><input type="reset" name="reset" value="Reset" /></td>
+	</tr>
+</form>
+</table>
+</td></tr>
+<tr>
+    <td colspan="5"><div align="center" class="style3">Copyright 2009. Crooks &amp; Castles logo and site content is the Copyright ownership of Mohammad TRavanchi.</div></td>
+</tr>
+</table>
+</body>
+</html>

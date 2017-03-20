@@ -1,0 +1,6 @@
+Replace these files, before do it take a back up from your current project.
+inBasket.jsp in atefeBagShop/web
+toBasket in atefeBagShop/src/java
+remove in atefeBagShop/web/images
+
+the remove from basket ability added to your project.

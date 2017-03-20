@@ -1,0 +1,115 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.9.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Apr 16, 2009 at 09:02 AM
+-- Server version: 5.0.67
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `parsian`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `categn` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `description` text collate latin1_general_ci NOT NULL,
+  PRIMARY KEY  (`categn`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`categn`, `description`) VALUES
+('cate02', 'categ02\r\n'),
+('neckles', ''),
+('ring', 'rings\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE IF NOT EXISTS `order` (
+  `usern` varchar(25) default 'AA',
+  `productn` varchar(25) default 'A',
+  `ID` int(11) NOT NULL auto_increment,
+  `status` varchar(7) NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`usern`, `productn`, `ID`, `status`) VALUES
+('hamid', 'ring02', 41, 'true'),
+('hamid', 'ring04', 40, 'true'),
+('arash', 'ring01', 39, 'false'),
+('arash', 'ring04', 38, 'false'),
+('arash', 'ring03', 37, 'false'),
+('arash', 'ring04', 36, 'false'),
+('arash', 'ring02', 35, 'true'),
+('arash', 'ring04', 34, 'true');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE IF NOT EXISTS `product` (
+  `pname` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `price` bigint(20) NOT NULL default '0',
+  `description` text collate latin1_general_ci NOT NULL,
+  `categn` varchar(11) collate latin1_general_ci NOT NULL default '0',
+  `image` varchar(25) collate latin1_general_ci NOT NULL default '',
+  PRIMARY KEY  (`pname`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`pname`, `price`, `description`, `categn`, `image`) VALUES
+('ring04', 3265, 'gold + brilliant + opal', 'categ03', '4'),
+('ring03', 2345, 'gold+ silver + brilliant + opal', 'ring', '3'),
+('ring02', 2233, 'gold+ silver + brilliant', 'ring', '2'),
+('ring01', 2399, 'gold+ silver', 'ring', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `fname` varchar(25) collate latin1_general_ci NOT NULL default '',
+  `email` varchar(50) collate latin1_general_ci NOT NULL default '',
+  `tel` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `usern` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `pass` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `id` int(5) NOT NULL auto_increment,
+  `access` char(5) collate latin1_general_ci NOT NULL default 'user',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`name`, `fname`, `email`, `tel`, `usern`, `pass`, `id`, `access`) VALUES
+('amirsaleh', 'salehzadeh', 'amirsa_salehzadeh', '2229348', 'admin', 'admin', 16, 'admin'),
+('hamid', 'hamidi', 'asdfasdf', '4567', 'hamid', 'ams', 19, 'user'),
+('arash', 'rezaey', 'arash_rezaey', '43562452345', 'arash', 'ams', 18, 'admin');

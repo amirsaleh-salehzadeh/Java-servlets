@@ -1,0 +1,82 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Dec 08, 2009 at 11:49 PM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `sportclub`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `classes`
+-- 
+
+CREATE TABLE `classes` (
+  `ID` int(11) NOT NULL auto_increment,
+  `SportType` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `StartDate` date NOT NULL default '0000-00-00',
+  `EndDate` date NOT NULL default '0000-00-00',
+  `Time` time NOT NULL default '00:00:00',
+  `Capacity` int(11) NOT NULL default '0',
+  `days` varchar(40) collate latin1_general_ci NOT NULL default '',
+  `Tutor` varchar(20) collate latin1_general_ci NOT NULL default '',
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=5 ;
+
+-- 
+-- Dumping data for table `classes`
+-- 
+
+INSERT INTO `classes` VALUES (2, 'karate', '2008-11-05', '2008-12-05', '16:30:00', 30, 'sat-sun-mon', 'Melkami');
+INSERT INTO `classes` VALUES (4, 'Kick boxing', '2008-11-06', '2008-12-06', '15:30:00', 15, 'tue-wed-thu', 'Kamyarian');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `classstudent`
+-- 
+
+CREATE TABLE `classstudent` (
+  `ID` int(11) NOT NULL auto_increment,
+  `ClassID` int(11) NOT NULL default '0',
+  `UserID` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=11 ;
+
+-- 
+-- Dumping data for table `classstudent`
+-- 
+
+INSERT INTO `classstudent` VALUES (10, 2, 1);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `user`
+-- 
+
+CREATE TABLE `user` (
+  `ID` int(11) NOT NULL auto_increment,
+  `Name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `FamilyName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `Address` text collate latin1_general_ci NOT NULL,
+  `Telephone` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `Age` int(11) NOT NULL default '0',
+  `Username` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `Password` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `Admin` varchar(20) collate latin1_general_ci NOT NULL default 'user',
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=3 ;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES (1, 'aaaa', 'aaaaa', '', '23', 23, 'asd', 'asd', 'user');
+INSERT INTO `user` VALUES (2, 'Ali', 'Ashouri', 'tehran', '09123007824', 25, 'admin', 'admin', 'admin');
+        

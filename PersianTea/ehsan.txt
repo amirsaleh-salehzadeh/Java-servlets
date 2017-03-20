@@ -1,0 +1,74 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Dec 06, 2009 at 01:07 PM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `persiantea`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `purchase`
+-- 
+
+CREATE TABLE `purchase` (
+  `email` varchar(30) collate latin1_general_ci NOT NULL default '',
+  `price` int(11) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `purchase`
+-- 
+
+INSERT INTO `purchase` VALUES ('null', 380);
+INSERT INTO `purchase` VALUES ('email', 800);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `tea`
+-- 
+
+CREATE TABLE `tea` (
+  `producer` varchar(50) collate latin1_general_ci NOT NULL default '',
+  `image` varchar(50) collate latin1_general_ci NOT NULL default '',
+  `number` int(20) NOT NULL default '0',
+  `price` int(11) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `tea`
+-- 
+
+INSERT INTO `tea` VALUES ('Lipton', '1', 100, 50);
+INSERT INTO `tea` VALUES ('Pennine', '2', 100, 40);
+INSERT INTO `tea` VALUES ('Assam', '3', 400, 150);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `user`
+-- 
+
+CREATE TABLE `user` (
+  `name` varchar(50) collate latin1_general_ci NOT NULL default '',
+  `family` varchar(50) collate latin1_general_ci NOT NULL default '',
+  `tel` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `address` text collate latin1_general_ci NOT NULL,
+  `password` varchar(50) collate latin1_general_ci NOT NULL default '',
+  `manager` varchar(10) collate latin1_general_ci NOT NULL default '',
+  `email` varchar(70) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES ('admin', 'admin', '225', 'admin', 'admin', 'true', 'admin@admin.com');
+INSERT INTO `user` VALUES ('ehsan', 'hajsamadi', '225', 'address', '123', 'user', 'email');
+        

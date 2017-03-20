@@ -1,0 +1,71 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Oct 22, 2009 at 12:12 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `atefehbagshop`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `bag`
+-- 
+
+CREATE TABLE `bag` (
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `price` int(8) NOT NULL default '0',
+  `description` text collate latin1_general_ci NOT NULL,
+  `image` varchar(20) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `bag`
+-- 
+
+INSERT INTO `bag` VALUES ('KJHG', 745354, 'JHGFJHGFJHssssssssssssssss\r\nsssss\r\nssssssssssssssssssssssssssssssssssssssssssssssssssss\r\nssssssdf gsdfg adsgasdf adsfzsfdgx db bxfth xcvnxg hxdgbxdgh xdhgb xcvbx  gsdfg adsgasdf adsfzsfdgx db bxfth xcvnxg hxdgbxdgh xdhgb xcvbx JHGFJHGFJHsssssssssssssss\r\nssssssssssssssssssssssssssssssssssssssssssssssssssss\r\nssdf gsdfg adsgasdf adsfzsfdgx db bxfth xcvnxg hxdgbxdgh xdhgb xcvbx \r\n', '1');
+INSERT INTO `bag` VALUES ('xvbxzba', 34234, 'zfvbzxcv zxfcv zsdfg zxcvzSD gtadgncvbjxg akdgjbas fadszfvbzxcv zxfcv zsdfg zxcvzSD gtadgncvbjxg akdgjbas fadszfvbzxcv zxfcv zsdfg zxcvzSD gtadgncvbjxg akdgjbas fadszfvbzxcv zxfcv zsdfg zxcvzSD gtadgncvbjxg akdgjbas fadszfvbzxcv zxfcv zsdfg zxcvzSD gtadgncvbjxg akdgjbas fadszfvbzxcv zxfcv zsdfg zxcvzSD gtadgncvbjxg akdgjbas fads', '2');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `purchase`
+-- 
+
+CREATE TABLE `purchase` (
+  `price` int(11) NOT NULL default '0',
+  `email` varchar(20) collate latin1_general_ci NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `purchase`
+-- 
+
+INSERT INTO `purchase` VALUES (745354, 'admin');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `users`
+-- 
+
+CREATE TABLE `users` (
+  `name` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `surname` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `email` varchar(40) collate latin1_general_ci NOT NULL default '',
+  `password` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `security` binary(1) NOT NULL default ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `users`
+-- 
+
+INSERT INTO `users` VALUES ('dfghdfb', 'xcvb', 'sdfgscvn', 'cvbn', 0x30);
+INSERT INTO `users` VALUES ('admin', 'admin', 'admin', 'admin', 0x31);
+INSERT INTO `users` VALUES ('123', '123', '123', '123', 0x30);
+        

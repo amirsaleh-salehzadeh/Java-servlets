@@ -1,0 +1,33 @@
+/* 
+    Document   : web
+    Created on : Mar 31, 2010, 5:12:19 PM
+    Author     : Amirsaleh
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+table th{
+    font-size:18px;
+    color: #ffd200;
+    font-weight: bold;
+}
+table td{
+    font-size:14px;
+    color: #ffd200;
+    
+}
+.title{
+    font-size:18px;
+    color: #ff6c00;
+    font-weight: bold;
+
+}
+a{
+    color:white;
+}
+

@@ -1,0 +1,3 @@
+1,'Jack','jonson','0','Otawa - Canada','921437 94 94','email@email.com'\n
+2,'jenna','cornney','1','Dubai - united arabian of emirate','971 543 73 48','jenna@email.com'\n
+3,'Talieh','Dastmalchi','1','Tehran - Iran','98 912 113 5665','Talieh@email.com'\n

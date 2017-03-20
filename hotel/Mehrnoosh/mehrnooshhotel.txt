@@ -1,0 +1,79 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.2-pl1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Apr 03, 2010 at 09:38 AM
+-- Server version: 4.1.12
+-- PHP Version: 5.0.4
+-- 
+-- Database: `mehrnooshhotel`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `booking`
+-- 
+
+CREATE TABLE `booking` (
+  `userName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `roomId` int(11) NOT NULL default '0',
+  `fromDate` date NOT NULL default '0000-00-00',
+  `toDate` date NOT NULL default '0000-00-00'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `booking`
+-- 
+
+INSERT INTO `booking` VALUES ('user', 1, '2010-04-02', '2010-04-09');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `passenger`
+-- 
+
+CREATE TABLE `passenger` (
+  `name` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `familyName` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `address` text collate latin1_general_ci NOT NULL,
+  `email` varchar(50) collate latin1_general_ci NOT NULL default '',
+  `password` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `phone` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `username` varchar(20) collate latin1_general_ci NOT NULL default '',
+  `admin` binary(1) NOT NULL default '',
+  `confirmed` binary(1) NOT NULL default '',
+  PRIMARY KEY  (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- 
+-- Dumping data for table `passenger`
+-- 
+
+INSERT INTO `passenger` VALUES ('user', 'user', 'user', 'user', 'user', 'user', 'user', 0x30, 0x31);
+INSERT INTO `passenger` VALUES ('admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 0x31, 0x30);
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `room`
+-- 
+
+CREATE TABLE `room` (
+  `id` int(11) NOT NULL auto_increment,
+  `beds` int(11) NOT NULL default '0',
+  `type` varchar(15) collate latin1_general_ci NOT NULL default '',
+  `available` int(11) NOT NULL default '0',
+  `price` int(11) NOT NULL default '0',
+  `image` varchar(20) collate latin1_general_ci NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=2 ;
+
+-- 
+-- Dumping data for table `room`
+-- 
+
+INSERT INTO `room` VALUES (1, 4, 'Single', 45, 345, 'sdfg');
+        

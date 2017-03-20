@@ -1,0 +1,157 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.9.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Mar 29, 2010 at 04:05 PM
+-- Server version: 5.0.67
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `cinema`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE IF NOT EXISTS `booking` (
+  `book_id` int(11) NOT NULL auto_increment,
+  `customer_id` int(11) NOT NULL,
+  `movie_id` int(11) NOT NULL,
+  `seat_id` int(11) default NULL,
+  `time` varchar(50) default NULL,
+  `date` date default NULL,
+  `qty` int(11) default NULL,
+  `total_price` int(11) default NULL,
+  `isActive` int(11) default '0',
+  PRIMARY KEY  (`book_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `booking`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `genre_id` int(11) NOT NULL auto_increment,
+  `genre` varchar(50) NOT NULL,
+  PRIMARY KEY  (`genre_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`genre_id`, `genre`) VALUES
+(1, 'Action'),
+(2, 'Romantic Comedy');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE IF NOT EXISTS `customer` (
+  `customer_id` int(11) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `tell` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `isActive` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`customer_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customer_id`, `name`, `last_name`, `tell`, `email`, `username`, `password`, `isActive`) VALUES
+(2, 'jeiran', 'Khoylou', '887967', 'j@yahoo', 'jeirankh', '123', 0),
+(13, 'ali', 'gholi', '8879777', 'ali@yahoo', 'aligh', '474', 0),
+(18, 'klsdfsd', 'dsfsd', 'ds', 'sdf', 'faf', '50', 0),
+(17, 'jj', 'kk', '67565', '76786', 'jiri', '333', 0),
+(16, 'tat', 'kh', '2414', 't@hhkjh', 'tat', '17', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movie`
+--
+
+CREATE TABLE IF NOT EXISTS `movie` (
+  `movie_id` int(11) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL,
+  `Director` varchar(50) NOT NULL,
+  `producer` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  `start_date` varchar(50) NOT NULL,
+  `genre_id` int(11) NOT NULL,
+  `image` varchar(100) default NULL,
+  PRIMARY KEY  (`movie_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `movie`
+--
+
+INSERT INTO `movie` (`movie_id`, `name`, `Director`, `producer`, `price`, `start_date`, `genre_id`, `image`) VALUES
+(2, 'the hours', 'woodi Allen', 'gjhgj', 23, '2010-01-01', 1, 'jdhfdkf'),
+(3, 'its Complicated', 'jkwdhwkh', 'dhkjwehd', 123, '2010-01-05', 2, 'dsjhgfkajsdg'),
+(4, 'hgjh', 'jhgjh', 'fdds', 14234, '2010-01-01', 2, 'gfjhfhjg'),
+(5, 'aaaaaaaaaa', 's', 's', 1, 'f', 1, NULL),
+(6, 'aaaaaaaaaa', 's', 's', 0, 'f', 1, NULL),
+(7, 'ssssssss', 'er', '', 4, '', 1, NULL),
+(8, 'io', 'uouoi', 'u', 32, '', 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seat`
+--
+
+CREATE TABLE IF NOT EXISTS `seat` (
+  `seat_id` int(11) NOT NULL auto_increment,
+  `row` int(11) NOT NULL,
+  `number` int(11) NOT NULL,
+  PRIMARY KEY  (`seat_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `seat`
+--
+
+INSERT INTO `seat` (`seat_id`, `row`, `number`) VALUES
+(1, 1, 1),
+(2, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `show times`
+--
+
+CREATE TABLE IF NOT EXISTS `show times` (
+  `time_id` int(11) NOT NULL auto_increment,
+  `times` varchar(50) NOT NULL,
+  `movie_id` int(11) NOT NULL,
+  PRIMARY KEY  (`time_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `show times`
+--
+
